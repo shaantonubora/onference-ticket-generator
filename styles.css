@@ -1,0 +1,386 @@
+:root {
+    font-family: "Inconsolata", monospace;
+    font-size: 32px;
+    --font-size0: 0.8rem;
+    --font-size1: 2rem;
+    --font-size2: 0.7rem;
+    --font-size3: 0.5rem;
+    --font-size4: 0.3rem;
+    --font-color1: hsl(0, 0%, 100%);
+    --font-color2: hsl(245, 15%, 58%);
+    --font-color3: hsl(252, 6%, 83%);
+    --font-color4: hsl(7, 71%, 60%);
+    --font-color5: hsl(7, 87%, 69%);
+    --font-color6: hsl(248, 70%, 10%);
+
+
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-y: none;
+    /* overflow: hidden; */
+    background: url(./assets/images/background-desktop.png) no-repeat center/cover;
+    padding-inline: 20px;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./assets/images/pattern-lines.svg) no-repeat center/cover;
+    z-index: -1;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 30%;
+    right: 20%;
+    width: 400px;
+    height: 400px;
+    background: url(./assets/images/pattern-circle.svg) no-repeat center/cover;
+    z-index: -1;
+}
+
+body #svg_top {
+    width: 30%;
+    position: fixed;
+    top: 10%;
+    right: 0%;
+}
+
+body #svg_bottom {
+    width: 40%;
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+}
+
+#logo {
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-inline: auto;
+}
+
+main {
+    z-index: 111;
+}
+
+main h2 {
+    font-size: var(--font-size1);
+    color: var(--font-color1);
+    text-align: center;
+    padding-block: 8px;
+}
+
+main .main_container>p {
+    font-size: var(--font-size0);
+    color: var(--font-color2);
+    text-align: center;
+    margin-block: 30px;
+}
+
+main #user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin-inline: auto;
+    margin-top: 50px;
+}
+
+main #user-form fieldset {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: none;
+    pointer-events: all;
+    margin-block: 10px;
+}
+
+main #user-form fieldset .validation-message {
+    width: 400px;
+    margin-top: 10px;
+    margin-inline: auto;
+    font-size: var(--font-size4);
+    color: var(--font-color3);
+}
+
+main #user-form fieldset .validation-messageth {
+    color: red;
+}
+
+main #user-form label {
+    width: 400px;
+    color: var(--font-color1);
+    font-size: var(--font-size2);
+    margin-inline: auto;
+}
+
+main #user-form .select_label {
+    margin-bottom: 10px;
+    font-size: var(--font-size2);
+}
+
+main #user-form .upload_label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+    background-color: #ffffff17;
+    background-clip: content-box;
+    width: 400px;
+    height: 100px;
+    border: 2px dashed #ffffff42;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+main #user-form .upload_label .user_avatar {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff28;
+    border-radius: 6px;
+}
+
+main #user-form .upload_label .user_avatar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+}
+
+
+
+main #user-form .upload_label span {
+    font-size: 0.5rem;
+    color: var(--font-color3);
+}
+
+main #user-form input {
+    width: 400px;
+    height: 50px;
+    background-color: #ffffff17;
+    background-clip: border-box;
+    border: 2px solid #ffffff42;
+    border-radius: 12px;
+    margin-inline: auto;
+    font-size: var(--font-size3);
+    color: var(--font-color1);
+    padding-inline: 10px;
+    cursor: pointer;
+}
+
+
+
+main #user-form input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    color: #ffffff;
+    font-size: 0.3rem;
+}
+
+main #user-form input[type="submit"],
+main #user-form input[type="reset"] {
+    background-color: var(--font-color4);
+    margin-top: 20px;
+    color: var(--font-color6);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+main #user-form input[type="submit"]:hover,
+main #user-form input[type="reset"]:hover {
+    background-color: var(--font-color5);
+}
+
+.appr_message span {
+    background: linear-gradient(45deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    background-clip: text;
+    color: transparent;
+}
+
+.update_message span {
+    color: var(--font-color5);
+}
+
+.ticket {
+    /* border: 2px solid red; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 600px;
+    aspect-ratio: 20/9;
+    margin-inline: auto;
+    margin-top: 100px;
+    background: url(./assets/images/pattern-ticket.svg) no-repeat center/contain;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.ticket>div {
+    width: 100%;
+}
+
+.ticket .event_details img {
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.ticket .event_details h3 {
+    color: var(--font-color1);
+    margin-bottom: 10px;
+}
+
+.ticket .event_details p {
+    color: var(--font-color2);
+    font-size: var(--font-size3);
+    text-align: left;
+}
+
+
+
+
+.ticket .user_info>img {
+    float: left;
+    width: 60px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.ticket .user_info h4 {
+    font-weight: 400;
+    font-size: var(--font-size0);
+    color: var(--font-color1);
+    margin-bottom: 10px;
+}
+
+.ticket .user_info p {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    color: var(--font-color3);
+    font-size: var(--font-size3);
+}
+
+.ticket_number {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+    transform: rotate(90deg);
+    font-size: var(--font-size0);
+    color: var(--font-color2);
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media only screen and (max-width : 842px) {
+
+    :root {
+        font-size: 18px;
+        --font-size0: 0.8rem;
+        --font-size1: 1.5rem;
+        --font-size2: 0.7rem;
+        --font-size3: 0.5rem;
+    }
+
+    body {
+        /* width: 100vw; */
+        background: url(./assets/images/background-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-inline: 40px;
+        /* padding-block: 40px; */
+    }
+
+    body::before {
+        width: 200px;
+        height: 200px;
+        top: 60%;
+    }
+
+
+}
+
+@media only screen and (max-width : 680px) {
+    .ticket {
+        max-width: 300px;
+        padding-top: 7px;
+        padding-left: 20px;
+        /* width: 80%;
+        padding-top: 3%;
+        padding-left: 6%;
+        min-width: 400px; */
+    }
+
+    .ticket .event_details img {
+        max-width: 50px !important;
+        margin-top: 0px;
+    }
+
+    .ticket .user_info>img {
+        max-width: 50px !important;
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+
+    body {
+        padding-inline: 10px;
+    }
+    main #user-form .select_label {
+        width: 100%;
+        min-width: 100px;
+        max-width: 300px;
+    }
+    main #user-form input {
+        width: 100%;
+        min-width: 100px;
+        max-width: 300px;
+    }
+
+    main #user-form .upload_label {
+        width: 100%;
+        min-width: 100px;
+        max-width: 300px;
+    }
+
+    main #user-form fieldset .validation-message {
+        width: 100%;
+        min-width: 100px;
+        max-width: 300px;
+    }
+}
