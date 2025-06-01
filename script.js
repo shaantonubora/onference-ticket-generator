@@ -75,7 +75,7 @@ function checkValidation() {
     const imageLink = URL.createObjectURL(inputFile.files[0]);
 
     if(inputFile.files[0].size >= 700000) {
-        if(inputFile.files[0].type === 'image/JPG' || inputFile.files[0].type === 'image/png') {
+        if(inputFile.files[0].type === 'image/jpg' || inputFile.files[0].type === 'image/png') {
             validationMessage.textContent = 'Upload your photo (JPG or PNG, max size: 500KB)';
             validationMessage.style.color = 'red';
             userAvatar.src = 'assets/images/icon-upload.svg';
@@ -84,7 +84,7 @@ function checkValidation() {
         }
         
     } else {
-        if(inputFile.files[0].type === 'image/JPG' || inputFile.files[0].type === 'image/png') {
+        if(inputFile.files[0].type === 'image/jpg' || inputFile.files[0].type === 'image/png') {
             validationMessage.textContent = `Uploaded`;
             validationMessage.style.color = 'green';
             userAvatar.src = `${imageLink}`;
