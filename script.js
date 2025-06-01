@@ -74,7 +74,7 @@ function changeAvatar() {
 function checkValidation() {
     const imageLink = URL.createObjectURL(inputFile.files[0]);
 
-    if(inputFile.files[0].size > 500000) {
+    if(inputFile.files[0].size >= 500000) {
         if(inputFile.files[0].type === 'image/jpeg' || inputFile.files[0].type === 'image/png') {
             validationMessage.textContent = 'Upload your photo (JPG or PNG, max size: 500KB)';
             validationMessage.style.color = 'red';
