@@ -73,6 +73,7 @@ function changeAvatar() {
 
 function checkValidation() {
     const imageLink = URL.createObjectURL(inputFile.files[0]);
+    console.log(imageLink);
 
     if(inputFile.files[0].size > 50000) {
         if(inputFile.files[0].type === 'image/jpeg' || inputFile.files[0].type === 'image/png') {
