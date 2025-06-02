@@ -112,14 +112,6 @@ dropArea.addEventListener('drop', e => {
     // const imageLink = URL.createObjectURL(inputFile.files[0]);
     checkValidation();
 })
-const objs = [{
-  name: 'Pallab Bora',
-  age: 12
-}]
-// const obj1 = {
-//   name: 'Pallab Bora',
-//   age: 12
-// }
 
 
 
